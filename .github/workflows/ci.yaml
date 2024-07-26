@@ -20,17 +20,21 @@ jobs:
       run: pip install -r requirements.txt
     - name: Install tree for directory listing
       run: sudo apt-get install -y tree
-    - name: Run unit tests
+    - name: Explore folders structure
       run: |
         echo "Current working directory:"
         pwd
         echo "Directory structure:"
         ls -la
-        echo "Org tree:"
+    - name: Explore folders structure
+      run: |
+        echo 'Explore folders structure'
+        echo 'Org tree:'
         tree > directory_structure.txt
         cat directory_structure.txt
         ls -R sensor_api/tests
-#        python3 -m unittest ./sensor_api/tests/test_visit_sensor.py
+    - name: Unit tests
+      run: python3 -m unittest ./sensor_api/tests/test_visit_sensor.py
 
 # removed the -m unittest 
 #     echo "Listing directory contents:"
