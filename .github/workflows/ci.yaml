@@ -30,7 +30,7 @@ jobs:
       run: |
         # Ensure the test file exists at the expected path
         if [ -f sensor_api/tests/test_visit_sensor.py ]; then
-          python ./sensor_api/tests/test_visit_sensor.py
+          python -m unittest './sensor_api/tests/test_visit_sensor.py'
         else
           echo "Test file not found: sensor_api/tests/test_visit_sensor.py"
           exit 1
