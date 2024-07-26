@@ -22,6 +22,7 @@ jobs:
       run: |
         echo "Current working directory:"
         pwd
+        ld -la
 #       cd ..
 #       python3 -m unittest sensor_api/tests/test_visit_sensor.py 
 
