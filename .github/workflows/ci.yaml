@@ -18,12 +18,19 @@ jobs:
         python-version: "3.12"
     - name: install dependencies
       run: pip install -r requirements.txt
+    - name: Install tree for directory listing
+      run: sudo apt-get install -y tree
     - name: Run unit tests
       run: |
         echo "Current working directory:"
         pwd
+        echo "Directory structure:"
         ls -la
-        python3 -m unittest ./sensor_api/tests/test_visit_sensor.py
+        echo "Org tree:"
+        tree > directory_structure.txt
+        cat directory_structure.txt
+        ls -R sensor_api/tests
+#        python3 -m unittest ./sensor_api/tests/test_visit_sensor.py
 
 # removed the -m unittest 
 #     echo "Listing directory contents:"
