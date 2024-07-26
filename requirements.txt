@@ -1,5 +1,5 @@
 numpy
 fastapi
 uvicorn
-os
+# os
 sys
