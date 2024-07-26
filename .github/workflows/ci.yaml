@@ -22,16 +22,13 @@ jobs:
       with:
         python-version: "3.12"
     - name: install dependencies
-      run: 
-#        python3 -m pip install --upgrade pip
-        pip install -r requirements.txt
-      - name: List directory contents for debugging
+      run: pip install -r requirements.txt
+    - name: List directory contents for debugging
       run: |
         echo "Listing directory contents:"
         ls -R
-      - name: Run unit tests
-        run: |
-          # Ensure the test file exists at the expected path
+    - name: Run unit tests
+        run: # Ensure the test file exists at the expected path
           if [ -f sensor_api/tests/test_visit_sensor.py ]; then
             python sensor_api/tests/test_visit_sensor.py
           else
