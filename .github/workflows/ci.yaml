@@ -23,7 +23,7 @@ jobs:
         echo "Current working directory:"
         pwd
         ls -la
-       python3 -m unittest ./sensor_api/tests/test_visit_sensor.py
+        python3 -m unittest ./sensor_api/tests/test_visit_sensor.py
 
 # removed the -m unittest 
 #     echo "Listing directory contents:"
