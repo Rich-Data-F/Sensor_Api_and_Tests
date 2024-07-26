@@ -26,7 +26,7 @@ jobs:
 #        python3 -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Unit tests
-      run: python -m unittest sensor_api/tests/test_visit_sensor.py
+      run: python unittest sensor_api/tests/test_visit_sensor.py #removed the -m
       # unittest sensor_api.tests.test_visit_sensor
       # python -m unittest discover -s '/sensor_api/tests' -p 'test_visit*.py' 
-      # #unittest sensor_api/tests/test_visit_sensor.py #removed the -m
+      # #unittest sensor_api/tests/test_visit_sensor.py 
