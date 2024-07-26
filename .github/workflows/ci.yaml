@@ -18,23 +18,23 @@ jobs:
         python-version: "3.12"
     - name: install dependencies
       run: pip install -r requirements.txt
-    - name: List directory contents for debugging
-      run: |
-        echo "Listing directory contents in root:"
-        ls -R
-        echo "Listing directory contents in sensor_api:"
-        ls -R sensor_api
-        echo "Listing directory contents in sensor_api/tests:"
-        ls -R sensor_api/tests
-    - name: Run unit tests
-      run: |
+    # - name: List directory contents for debugging
+    #   run: |
+    #     echo "Listing directory contents in root:"
+    #     ls -R
+    #     echo "Listing directory contents in sensor_api:"
+    #     ls -R sensor_api
+    #     echo "Listing directory contents in sensor_api/tests:"
+    #     ls -R sensor_api/tests
         # Ensure the test file exists at the expected path
-        if [ -f sensor_api/tests/test_visit_sensor.py ]; then
-          python -m unittest './sensor_api/tests/test_visit_sensor.py'
-        else
-          echo "Test file not found: sensor_api/tests/test_visit_sensor.py"
-          exit 1
-        fi
+        # if [ -f sensor_api/tests/test_visit_sensor.py ]; then
+        #   python -m unittest './sensor_api/tests/test_visit_sensor.py'
+        # else
+        #   echo "Test file not found: sensor_api/tests/test_visit_sensor.py"
+        #   exit 1
+        # fi
+    - name: Run unit tests
+      run: python unittest /sensor_api/tests/test_visit_sensor.py #removed the -m unittest 
     #     echo "Listing directory contents:"
     #     ls -R
     # - name: Run unit tests
@@ -47,7 +47,6 @@ jobs:
     #       exit 1
     #     fi
       #   - name: Unit tests
-      # run: python sensor_api/tests/test_visit_sensor.py #removed the -m unittest 
       # unittest sensor_api.tests.test_visit_sensor
       # python -m unittest discover -s '/sensor_api/tests' -p 'test_visit*.py' 
-      # #unittest sensor_api/tests/test_visit_sensor.py 
+      # #unittest sensor_api/tests/test_visit_sensor.py
