@@ -34,7 +34,9 @@ jobs:
         #   exit 1
         # fi
     - name: Run unit tests
-      run: python unittest /sensor_api/tests/test_visit_sensor.py #removed the -m unittest 
+      run: |
+        cd ..
+        python -m unittest /sensor_api/tests/test_visit_sensor.py #removed the -m unittest 
     #     echo "Listing directory contents:"
     #     ls -R
     # - name: Run unit tests
