@@ -1,0 +1,4 @@
+# .idea *Using VSCode, not Pycharm
+/venv/
+/mynewenv/
+*__pycache__/

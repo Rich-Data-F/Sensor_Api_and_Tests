@@ -1,0 +1,4 @@
+{
+  "sensor_api/tests/test_store_methods.py": true,
+  "sensor_api/tests/test_visit_sensor.py": true
+}
