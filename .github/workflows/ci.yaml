@@ -13,28 +13,27 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+    - name: checkout repository
       uses: actions/checkout@v3
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.12"
-      - name: install dependencies
-        run:
-          pip install -r requirements.txt
-      - name: List directory contents for debugging
-        run:
-          echo "Listing directory contents:"
-          ls -R
-      - name: Run unit tests
-        run:
-          # Ensure the test file exists at the expected path
-          if [ -f sensor_api/tests/test_visit_sensor.py ]; then
-            python sensor_api/tests/test_visit_sensor.py
-          else
-            echo "Test file not found: sensor_api/tests/test_visit_sensor.py"
-            exit 1
-          fi
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12"
+    - name: install dependencies
+      run: pip install -r requirements.txt
+    - name: List directory contents for debugging
+      run:
+        echo "Listing directory contents:"
+        ls -R
+    - name: Run unit tests
+      run:
+        # Ensure the test file exists at the expected path
+        if [ -f sensor_api/tests/test_visit_sensor.py ]; then
+          python sensor_api/tests/test_visit_sensor.py
+        else
+          echo "Test file not found: sensor_api/tests/test_visit_sensor.py"
+          exit 1
+        fi
       #   - name: Unit tests
       # run: python sensor_api/tests/test_visit_sensor.py #removed the -m unittest 
       # unittest sensor_api.tests.test_visit_sensor
